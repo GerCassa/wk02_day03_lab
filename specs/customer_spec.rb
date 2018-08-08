@@ -18,4 +18,10 @@ class CustomerTest < MiniTest::Test
     assert_equal(50, @customer.wallet)
   end
 
+  def test_can_remove_money
+    before = @customer.wallet
+    @customer.remove_money(5)
+    assert_equal(45, @customer.wallet)
+  end
+
 end
