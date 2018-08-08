@@ -12,8 +12,8 @@ class Customer
     @wallet -= amount
   end
 
-  def buy_drink(pub, drink_name)
-    drink = pub.get_drink(drink_name)
+  def buy_drink(pub, drink_name, customer)
+    drink = pub.get_drink(drink_name, customer)
     if drink != nil
       price = drink.price
       remove_money(price)

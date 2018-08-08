@@ -29,7 +29,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_can_buy_drink
-    @customer.buy_drink(@pub, "Kraken")
+    @customer.buy_drink(@pub, "Kraken", @customer)
     assert_equal(45, @customer.wallet)
     assert_equal(5, @pub.till)
   end
