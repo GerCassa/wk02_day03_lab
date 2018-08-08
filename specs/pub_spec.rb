@@ -28,12 +28,12 @@ class PubTest < Minitest::Test
     assert_equal(3, @pub.drinks.length)
   end
 
-  def test_get_drink_by_name
-    assert_equal(@beer, @pub.get_drink('Bud'))
+  def test_get_drink_by_name_legal
+    assert_equal(@beer, @pub.get_drink('Bud', @customer1))
   end
 
-  def test_get_drink_by_name__nil
-    assert_nil(@pub.get_drink('Sol'))
+  def test_get_drink_by_name__nil_legal
+    assert_nil(@pub.get_drink('Sol', @customer1))
   end
 
   def test_can_add_money
@@ -49,6 +49,8 @@ class PubTest < Minitest::Test
   def test_customer_age__illegal
     assert_equal(false, @pub.check_age(@customer2))
   end
+
+
 
 
 end
