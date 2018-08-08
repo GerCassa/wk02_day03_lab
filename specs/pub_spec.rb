@@ -11,4 +11,8 @@ class PubTest < Minitest::Test
   def test_pub_has_name
     assert_equal('Easy?', @pub.name)
   end
+
+  def test_pub_has_till
+    assert_equal(0, @pub.till)
+  end
 end
