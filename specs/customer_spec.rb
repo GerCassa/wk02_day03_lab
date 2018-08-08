@@ -7,6 +7,11 @@ require_relative('../customer')
 class CustomerTest < MiniTest::Test
 
   def setup
+    beer = Drink.new("Bud", 4)
+    whisky = Drink.new("Bowmore", 6)
+    rum = Drink.new("Kraken", 5)
+    drinks = [beer, whisky, rum]
+    @pub = Pub.new('Easy?', drinks)
     @customer = Customer.new("Tony", 50)
   end
 
@@ -19,9 +24,14 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_can_remove_money
-    before = @customer.wallet
     @customer.remove_money(5)
     assert_equal(45, @customer.wallet)
+  end
+
+  def test_can_buy_drink
+    @customer.buy_drink(@pub, "Kraken")
+    assert_equal(45, @customer.wallet)
+    assert_equal(5, @pub.till)
   end
 
 end
