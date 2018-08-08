@@ -1,10 +1,9 @@
 require('minitest/autorun')
 require('minitest/rg')
-require_relative('../pub.rb')
-require_relative('../drink.rb')
+require_relative('../pub')
+require_relative('../drink')
 
-def PubTest < MiniTest::Test
-
+class PubTest < Minitest::Test
   def setup
     @pub = Pub.new('Easy?')
   end
