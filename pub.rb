@@ -17,5 +17,8 @@ class Pub
     return nil
   end
 
+  def add_money(amount)
+    @till += amount
+  end
 
 end
