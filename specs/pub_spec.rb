@@ -27,4 +27,8 @@ class PubTest < Minitest::Test
   def test_get_drink_by_name
     assert_equal(@beer, @pub.get_drink('Bud'))
   end
+
+  def test_get_drink_by_name__nil
+    assert_nil(@pub.get_drink('Sol'))
+  end
 end
