@@ -8,10 +8,12 @@ class Pub
     @drinks = drinks
   end
 
-  def get_drink(name)
-    for drink in @drinks
-      if drink.name == name
-        return drink
+  def get_drink(name, customer)
+    if check_age(customer)
+      for drink in @drinks
+        if drink.name == name
+          return drink
+        end
       end
     end
     return nil
