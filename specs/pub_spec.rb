@@ -31,4 +31,10 @@ class PubTest < Minitest::Test
   def test_get_drink_by_name__nil
     assert_nil(@pub.get_drink('Sol'))
   end
+
+  def test_can_add_money
+    before = @pub.till
+    @pub.add_money(5)
+    assert_equal(5, @pub.till)
+  end
 end
