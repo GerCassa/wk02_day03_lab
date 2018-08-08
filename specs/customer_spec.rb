@@ -38,4 +38,6 @@ class CustomerTest < MiniTest::Test
     assert_equal(35, @customer.age)
   end
 
+
+
 end
